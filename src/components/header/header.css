@@ -1,0 +1,4 @@
+.header .chat-partner, .header .chat-title {
+  position: relative;
+  left: -40px;
+}

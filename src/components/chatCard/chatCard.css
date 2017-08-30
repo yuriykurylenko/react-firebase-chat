@@ -1,0 +1,30 @@
+.chat-card {
+  line-height: inherit;
+  position: relative;
+  padding: 10px;
+  height: 66px;
+  text-align: left;
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #000000;
+  border-bottom: 1px solid #9e9e9e;
+}
+
+.chat-card-active {
+  background-color: #dcf8c6;
+}
+
+.chat-card .time-text {
+  color: #757575;
+}
+
+.chat-card .message-text {
+  margin-left: 60px;
+  width: calc(100% - 80px);
+}
+
+.chat-card .dummy-text {
+  color: #757575;
+  line-height: 50px;
+  margin-left: 10px;
+}

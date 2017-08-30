@@ -1,0 +1,7 @@
+.messages {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: scroll;
+  max-height: calc(100vh - 150px);
+}

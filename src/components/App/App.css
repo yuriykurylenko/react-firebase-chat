@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+}
+
+.full-screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 80px;
+  width: 75%;
+  background-color: #ffffff;
+}
+
+.sidebar {
+  position: fixed;
+  width: inherit;
+  border-right: 1px solid #9e9e9e;
+}
+
+.with-margin {
+  margin: 5px;
+}
+
+.with-margin-top {
+  margin-top: 15px;
+}
+
+.with-margin-left {
+  margin-left: 15px;
+}
+
+.with-margin-right {
+  margin-right: 15px;
+}
+
+.with-padding {
+  padding: 15px;
+}
+
+.line-height-normal {
+  line-height: 30px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.btn-center {
+  position: absolute;
+  top: 42%;
+  left: 42%;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body {
+  background-image: url("/images/hearts.gif");
+}
