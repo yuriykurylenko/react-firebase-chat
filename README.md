@@ -4,6 +4,7 @@ Source code for a simple cahtt app, built with react and Firebase.
 
 Can be tested here - https://react-firebase-chat.herokuapp.com/
 
+![alt text](https://github.com/yuriykurylenko/react-firebase-chat/blob/master/screenshots/screenshot.png "App screenshot")
 
 
 To run the app in development:
