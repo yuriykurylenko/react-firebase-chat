@@ -1,12 +1,20 @@
-import nightmare from 'nightmare';
+import Nightmare from 'nightmare';
+const nightmare = Nightmare();
+
 import helper from './helper';
 
-describe('When visiting the homepage', () => {
+describe('when user tries to log in', () => {
   const homepageUrl = helper.url('/');
-  test('it shows the log in button', async () => {
-    let page = nightmare().goto(homepageUrl);
+
+  test('it shows the FB log in window', async () => {
+    let loginWindowOpened;
+
+    let page = nightmare.on('new-window', () => {
+      loginWindowOpened = true
+    }).goto(homepageUrl).click('button');
+
     let text = await page.evaluate(() => document.body.textContent).end();
 
-    expect(text).toContain('Log in with Facebook');
+    expect(loginWindowOpened).toBeTruthy();
   });
 });
