@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatCard from '../../components/chatCard/chatCard';
+import ChatCard from '../../../../components/chatCard/chatCard';
 import { mount } from 'enzyme';
 
 describe('<ChatCard />', () => {

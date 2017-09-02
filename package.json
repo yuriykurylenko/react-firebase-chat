@@ -26,7 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test-prepare": "PORT=8000 NODE_ENV=test react-scripts start",
-    "test-components": "react-scripts test test/components --env=jsdom",
+    "test-unit": "react-scripts test test/unit --env=jsdom",
     "test-e2e": "react-scripts test test/e2e --env=jsdom",
     "eject": "react-scripts eject"
   }
