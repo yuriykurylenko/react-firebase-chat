@@ -1,6 +1,6 @@
 # Chat app, built with React and Firebase
 
-Source code for a simple cahtt app, built with react and Firebase.
+Source code for a simple chat app, built with react and Firebase.
 
 Can be tested here - https://react-firebase-chat.herokuapp.com/
 
