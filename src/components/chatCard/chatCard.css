@@ -16,6 +16,12 @@
 
 .chat-card .time-text {
   color: #757575;
+  font-size: 12px;
+}
+
+.chat-card .user-name {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .chat-card .message-text {

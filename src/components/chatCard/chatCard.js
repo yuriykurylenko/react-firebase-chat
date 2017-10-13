@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { Icon } from 'react-materialize';
+
 import './chatCard.css';
 
 class ChatCard extends PureComponent {
@@ -13,12 +15,13 @@ class ChatCard extends PureComponent {
     isActive: PropTypes.bool,
     onClick: PropTypes.func
   };
-  
+
   render = () => {
     const {
       userName,
       userPhotoUrl,
       lastMessageSentTime,
+      lastMessageIncoming,
       lastMessageText,
       isActive,
       onClick
@@ -37,12 +40,16 @@ class ChatCard extends PureComponent {
           <img className="left btn-floating with-margin"
                src={ userPhotoUrl }
                alt={ userName } />
+          <span className="user-name">{ userName.split(' ')[0] }</span>
           { lastMessageText ? (
             <span>
               <div className="right time-text with-margin-right line-height-normal">
                 <i>{ lastMessageSentTime }</i>
               </div>
               <div className="message-text line-height-normal bottom truncate" >
+                <Icon tiny>
+                  { lastMessageIncoming ? 'vertical_align_bottom' : 'vertical_align_top' }
+                </Icon>
                 { lastMessageText }
               </div>
             </span>
