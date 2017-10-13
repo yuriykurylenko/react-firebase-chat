@@ -11,6 +11,7 @@ class ChatCard extends PureComponent {
     userName: PropTypes.string,
     userPhotoUrl: PropTypes.string,
     lastMessageSentTime: PropTypes.string,
+    lastMessageIncoming: PropTypes.boolean,
     lastMessageText: PropTypes.string,
     isActive: PropTypes.bool,
     onClick: PropTypes.func

@@ -88,7 +88,6 @@ class App extends Component {
               <div className="sidebar bg-white full-height">
                 <ChatsList
                   chats={ chats }
-                  currentUserUid={ currentUserUid }
                   currentChatUserUid={ currentChatUserUid }
                   handleCardClick={ this.fetchOrAddChat }
                 />

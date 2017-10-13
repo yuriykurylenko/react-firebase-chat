@@ -65,13 +65,15 @@ export const displayChatsSelector = createSelector(
   chatsSelector,
   chats => {
     return chats.map(chat => {
+      console.log(chat.lastMessage);
       return {
         ...chat,
         userUid: chat.user && chat.user.uid,
         userPhotoUrl: chat.user && chat.user.photoURL,
         userName: chat.user && chat.user.name,
         lastMessageSentTime: chat.lastMessage ? moment(chat.lastMessage.sentAt).calendar() : null,
-        lastMessageText: chat.lastMessage ? chat.lastMessage.text : null
+        lastMessageText: chat.lastMessage ? chat.lastMessage.text : null,
+        lastMessageIncoming: chat.lastMessage && chat.lastMessage.authorUid === chat.user.uid
       };
     });
   }

@@ -8,13 +8,12 @@ import './chatsList.css';
 class ChatsList extends PureComponent {
   static propTypes = {
     chats: PropTypes.array,
-    currentUserUid: PropTypes.string,
     currentChatUserUid: PropTypes.string,
     handleCardClick: PropTypes.func
   };
 
   render = () => {
-    const { currentUserUid, chats, currentChatUserUid, handleCardClick } = this.props;
+    const { chats, currentChatUserUid, handleCardClick } = this.props;
 
     return (
       <div>
@@ -25,14 +24,10 @@ class ChatsList extends PureComponent {
             chats.map(chat => {
               const chatUser = chat.user;
 
-              const messages = Object.values(chat.messages);
-              const lastMessageAuthorUid = messages[messages.length - 1].authorUid;
-
               return (
                 <ChatCard
                   { ...chat }
                   key={ chatUser.uid }
-                  lastMessageIncoming={ lastMessageAuthorUid != currentUserUid }
                   isActive={ chatUser.uid === currentChatUserUid }
                   onClick={ () => handleCardClick(chatUser) }
                 />
