@@ -139,9 +139,89 @@ describe('App Selectors', () => {
         userPhotoUrl: user2.photoURL,
         userName: user2.name,
         lastMessageSentTime: moment(message2.sentAt).calendar(),
-        lastMessageText: message2.text
+        lastMessageText: message2.text,
+        lastMessageIncoming: false
       }];
       expect(selectors.displayChatsSelector(initialState)).toEqual(expected);
+    });
+
+    describe('.lastMessageIncoming', () => {
+      describe('when the last message does not exist', () => {
+        let chats = [{
+          messages: {},
+          user: user2
+        }];
+
+        const initialState = {
+          user: user1,
+          users: {
+            'rAnDoMuId': user1,
+            'mOrERanDomUid': user2
+          },
+          chats: {
+            'mOrERanDomUid': chats[0]
+          },
+          currentChatUid: 'mOrERanDomUid'
+        }
+
+        expect(selectors.displayChatsSelector(initialState).lastMessageIncoming).toEqual(undefined);
+      });
+
+      describe('when the last message is from the current user', () => {
+        let messages = {
+          '-KsZTBPbMR5-CSiWy2zw': message2,
+          '-KsZT0t_pmoZ8aDST41U': message1
+        };
+
+        let chats = [{
+          lastMessage: message2,
+          messages: messages,
+          user: user2
+        }];
+
+        const initialState = {
+          user: user1,
+          users: {
+            'rAnDoMuId': user1,
+            'mOrERanDomUid': user2
+          },
+          chats: {
+            'mOrERanDomUid': chats[0]
+          },
+          currentChatUid: 'mOrERanDomUid'
+        }
+
+        const resultChats = selectors.displayChatsSelector(initialState);
+        expect(resultChats[0].lastMessageIncoming).toEqual(false);
+      });
+
+      describe('when the last message is from another user', () => {
+        let messages = {
+          '-KsZT0t_pmoZ8aDST41U': message1,
+          '-KsZTBPbMR5-CSiWy2zw': message2
+        };
+
+        let chats = [{
+          lastMessage: message1,
+          messages: messages,
+          user: user2
+        }];
+
+        const initialState = {
+          user: user1,
+          users: {
+            'rAnDoMuId': user1,
+            'mOrERanDomUid': user2
+          },
+          chats: {
+            'mOrERanDomUid': chats[0]
+          },
+          currentChatUid: 'mOrERanDomUid'
+        }
+
+        const resultChats = selectors.displayChatsSelector(initialState);
+        expect(resultChats[0].lastMessageIncoming).toEqual(true);
+      });
     });
   });
 

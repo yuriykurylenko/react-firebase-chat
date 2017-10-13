@@ -65,7 +65,6 @@ export const displayChatsSelector = createSelector(
   chatsSelector,
   chats => {
     return chats.map(chat => {
-      console.log(chat.lastMessage);
       return {
         ...chat,
         userUid: chat.user && chat.user.uid,

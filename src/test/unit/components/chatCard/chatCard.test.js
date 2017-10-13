@@ -8,6 +8,7 @@ describe('<ChatCard />', () => {
     userPhotoUrl: 'http://random-url.com',
     lastMessageSentTime: 'Today at 10:00',
     lastMessageText: 'Hey!',
+    lastMessageIncoming: true,
     isActive: false,
     onClick: jest.fn()
   };
@@ -29,8 +30,8 @@ describe('<ChatCard />', () => {
     test('it renders the correct last message inside the card', () => {
       const component = mount(<ChatCard { ...props } />);
 
-      expect(component.find('.message-text').length).toEqual(1);
-      expect(component.find('.message-text').text()).toEqual(props.lastMessageText);
+      expect(component.find('.message-text span').length).toEqual(1);
+      expect(component.find('.message-text span').text()).toEqual(props.lastMessageText);
     });
 
     test('it renders the correct last message send time inside the card', () => {
@@ -48,10 +49,11 @@ describe('<ChatCard />', () => {
         lastMessageText: null
       };
 
-      test('it renders only the dummy text inside the card', () => {
+      test('it renders the user name and the dummy text inside the card', () => {
         const component = mount(<ChatCard { ...dummyCardProps } />);
 
-        expect(component.text()).toEqual(dummyText);
+        expect(component.find('.dummy-text').text()).toEqual(dummyText);
+        expect(props.userName).toContain(component.find('.user-name').text());
       });
     });
 

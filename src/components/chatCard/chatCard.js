@@ -11,7 +11,7 @@ class ChatCard extends PureComponent {
     userName: PropTypes.string,
     userPhotoUrl: PropTypes.string,
     lastMessageSentTime: PropTypes.string,
-    lastMessageIncoming: PropTypes.boolean,
+    lastMessageIncoming: PropTypes.bool,
     lastMessageText: PropTypes.string,
     isActive: PropTypes.bool,
     onClick: PropTypes.func
@@ -51,7 +51,7 @@ class ChatCard extends PureComponent {
                 <Icon tiny>
                   { lastMessageIncoming ? 'vertical_align_bottom' : 'vertical_align_top' }
                 </Icon>
-                { lastMessageText }
+                <span>{ lastMessageText }</span>
               </div>
             </span>
           ) : <span className="dummy-text">Your chat starts here...</span> }
